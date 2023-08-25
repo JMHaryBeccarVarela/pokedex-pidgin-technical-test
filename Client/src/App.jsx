@@ -1,7 +1,7 @@
 /* import  { useState, useEffect } from 'react'; */
-import Home from "./views/homeView";/* 
-import Detail from "./components/detail";
-import Landing from "./components/landing" */
+import Home from "./views/homeView"; 
+import Detail from "./views/detail";
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -12,7 +12,11 @@ import {
 const router = createBrowserRouter([
   {
     path:"/",
-    element: <Home></Home>
+    element: <Home/>
+  },
+  {
+    path: "/detail/:id",
+    element: <Detail/>
   }
 ])
 

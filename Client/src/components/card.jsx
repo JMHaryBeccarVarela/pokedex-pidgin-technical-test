@@ -11,6 +11,7 @@ const Card = () => {
       .then(response => response.json())
       .then(data => {
         setPokemonData(data.pokemon);
+        
       })
       .catch(error => {
         console.error('Error al cargar y analizar los datos JSON:', error);
@@ -18,12 +19,14 @@ const Card = () => {
   }, []);
 
 
+  
+  
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const visiblePokemon = pokemonData.slice(startIndex, endIndex);
-
+  
   const totalPages = Math.ceil(pokemonData.length / itemsPerPage);
-
+  
   const handlePageChange = newPage => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
@@ -68,11 +71,11 @@ const Card = () => {
 
             </Link>
 
-        ))}
+))}
       </div>
     </div>
   );
 };
 
-export default Card;
+export default Card
 
